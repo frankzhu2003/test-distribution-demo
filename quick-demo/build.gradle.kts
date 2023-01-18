@@ -18,6 +18,9 @@ java {
 }
 
 tasks.test {
+    // force tests to always run; see https://www.stefan-oehme.com/stop-rerunning-tests for inspiration
+    inputs.property("integration.date", System.currentTimeMillis())
+
     onlyIf { true }
     useJUnitPlatform()
     //maxParallelForks = 2
