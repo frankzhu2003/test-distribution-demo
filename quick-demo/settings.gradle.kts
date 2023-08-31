@@ -22,7 +22,7 @@ pluginManagement {
 }
 
 plugins {
-    id("com.gradle.enterprise") version "3.14"
+    id("com.gradle.enterprise") version "3.14.1"
 
     // The version number has to be adjusted here after each major release.
     // id("com.gradle.enterprise.test-distribution") version ("2.3.5")
