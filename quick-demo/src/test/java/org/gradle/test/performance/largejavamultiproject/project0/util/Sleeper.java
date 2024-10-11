@@ -7,7 +7,7 @@ import static java.lang.Thread.currentThread;
 
 public class Sleeper {
 
-    private final static Duration DEFAULT_SLEEP_DURATION = Duration.ofMillis(50);
+    private final static Duration DEFAULT_SLEEP_DURATION = Duration.ofMillis(500);
 
     public static void sleep() {
         sleep(DEFAULT_SLEEP_DURATION);

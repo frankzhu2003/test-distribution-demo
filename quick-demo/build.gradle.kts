@@ -14,7 +14,7 @@ dependencies {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(11))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 }
 
@@ -27,15 +27,17 @@ tasks.test {
     //maxParallelForks = 2
     testLogging {
         events("PASSED", "FAILED", "SKIPPED")
-        events ("SKIPPED")
         displayGranularity = 1
     }
-    //  predictiveSelection {
-    //      enabled.set(true)
-    //  }
-    distribution {
-        maxLocalExecutors.set(0)
+
+    develocity.predictiveTestSelection {
         enabled.set(true)
+    }
+    develocity.testDistribution {
+        maxLocalExecutors.set(8)
+        maxRemoteExecutors.set(4)
+        enabled.set(true)
+//        remoteExecutionPreferred.set(true)
     }
 
     outputs.upToDateWhen { true }
